@@ -2,9 +2,9 @@ import { css } from '@emotion/css';
 import { theme } from 'core/theme';
 
 export const root = css`
-  & > :nth-child(n + 2) {
-    margin-top: 2rem;
-  }
+  
+    margin: 2rem;
+  
 `;
 
 export const list = css`
@@ -13,7 +13,7 @@ export const list = css`
   grid-row-gap: 2rem;
   grid-column-gap: 2rem;
   list-style: none;
-  margin: 0;
+  margin: 10;
   padding: 0;
 
   @media (min-width: ${theme.breakpoints.values.sm}px) {

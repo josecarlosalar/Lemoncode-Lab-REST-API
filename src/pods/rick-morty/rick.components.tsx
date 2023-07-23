@@ -62,14 +62,12 @@ export const RickMortyComponent: React.FC<Props> = ({ characters }) => {
 
     return (
         <>
-            <AppLayout>
-                <Grid className={classes.contenedor} container spacing={2}>
-                    <List>
-                        {renderListItems()}
-                    </List>
-                    <DialogCard openProp={open} handleClose={handleClose} selected={selectedCharacter} /> 
-                </Grid> 
-            </AppLayout>
+            <Grid className={classes.contenedor} container spacing={2}>
+                <List>
+                    {renderListItems()}
+                </List>
+                <DialogCard openProp={open} handleClose={handleClose} selected={selectedCharacter} /> 
+            </Grid>
         </>
     );
     

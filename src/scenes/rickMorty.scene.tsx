@@ -1,12 +1,12 @@
 import React from "react";
-import { CenteredLayout } from "../layouts/centered.layout";
 import { RickMortyContainer } from "../pods/rick-morty";
+import { AppLayout } from "layouts";
 
-export const RickMortyScene: React.FC = () => {
+export const RickMortyScene = () => {
   
   return (
-    <CenteredLayout>
+    <AppLayout>
         <RickMortyContainer />
-    </CenteredLayout>
+    </AppLayout>
   );
 };
