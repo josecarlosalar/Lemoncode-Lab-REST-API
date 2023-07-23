@@ -1,5 +1,6 @@
 import { css } from '@emotion/css';
 
 export const content = css`
-  margin: 2rem;
+  margin: 0,
+  padding: 0,
 `;

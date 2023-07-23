@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { switchRoutes } from './routes';
 import { HotelCollectionScene, HotelScene } from 'scenes';
+import { RickMortyScene } from 'scenes/rickMorty.scene';
 
 export const RouterComponent: React.FunctionComponent = () => {
   return (
@@ -10,6 +11,10 @@ export const RouterComponent: React.FunctionComponent = () => {
         <Route
           path={switchRoutes.hotelCollection}
           element={<HotelCollectionScene />}
+        />
+        <Route
+          path={switchRoutes.rickMorty}
+          element={<RickMortyScene />}
         />
         <Route path={switchRoutes.createHotel} element={<HotelScene />} />
         <Route path={switchRoutes.editHotel} element={<HotelScene />} />
