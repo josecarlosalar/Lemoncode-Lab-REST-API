@@ -1,2 +1,2 @@
-export * from './hotel-collection.scene';
-export * from './hotel.scene';
+export * from './rickmorty-collection.scene';
+export * from './rickmorty.scene';

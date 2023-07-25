@@ -5,7 +5,6 @@ interface SwitchRoutes {
   hotelCollection: string;
   createHotel: string;
   editHotel: string;
-  rickMorty: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
@@ -13,7 +12,6 @@ export const switchRoutes: SwitchRoutes = {
   hotelCollection: '/hotels',
   createHotel: '/hotels/create',
   editHotel: '/hotels/:id',
-  rickMorty: '/rickmorty',
 };
 
 type NavigationFunction = (id: string) => string;

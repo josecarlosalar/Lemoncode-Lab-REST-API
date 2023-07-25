@@ -1,12 +1,9 @@
-import React from "react";
-import { RickMortyContainer } from "../pods/rick-morty";
-import { AppLayout } from "layouts";
+import * as React from 'react';
+import { AppLayout } from 'layouts';
+import { CharacterContainer } from 'pods/character';
 
-export const RickMortyScene = () => {
-  
-  return (
-    <AppLayout>
-        <RickMortyContainer />
-    </AppLayout>
-  );
-};
+export const RickMortyScene = () => (
+  <AppLayout>
+    <CharacterContainer />
+  </AppLayout>
+);
