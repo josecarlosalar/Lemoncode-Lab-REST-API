@@ -5,25 +5,25 @@ import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
 
 interface Props {
-  hotelCollection: CharacterEntityVm[];
-  onCreateHotel: () => void;
-  onEdit: (id: number) => void;
-  onDelete: (id: number) => void;
+  characterCollection: CharacterEntityVm[];
+  // onCreateHotel: () => void;
+  onEdit: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { hotelCollection, onCreateHotel, onEdit, onDelete } = props;
+  const { characterCollection, onEdit, onDelete } = props;
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" color="primary" onClick={onCreateHotel}>
+      {/* <Button variant="contained" color="primary" onClick={onCreateHotel}>
         Add hotel
-      </Button>
+      </Button> */}
 
       <ul className={classes.list}>
-        {hotelCollection.map((hotel) => (
+        {characterCollection.map((hotel) => (
           <li key={hotel.id}>
             <CharacterCard character={hotel} onEdit={onEdit} onDelete={onDelete} />
           </li>
