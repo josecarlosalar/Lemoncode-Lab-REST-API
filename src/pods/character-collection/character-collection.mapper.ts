@@ -7,7 +7,6 @@ export const mapFromApiToVm = (
   id: caharacter.id,
   picture: `${caharacter.image}`,
   name: caharacter.name,
-  description: caharacter.origin.name,
-  location: caharacter.location.name,
-  gender: caharacter.gender,
+  status: caharacter.status,
+  species: caharacter.species,
 });

@@ -13,25 +13,14 @@ export const CharacterCollectionContainer = () => {
     loadCharacterCollection();
   }, []);
 
-  const handleCreateHotel = () => {
-    // navigate(linkRoutes.createHotel);
-  };
-
   const handleEdit = (id: string) => {
     navigate(linkRoutes.editCharacter(id));
-  };
-
-  const handleDelete = async (id: string) => {
-    await deleteCharacter(id);
-    loadCharacterCollection();
   };
 
   return (
     <CharacterCollectionComponent
       characterCollection={characterCollection}
-      // onCreateHotel={handleCreateHotel}
       onEdit={handleEdit}
-      onDelete={handleDelete}
     />
   );
 };
