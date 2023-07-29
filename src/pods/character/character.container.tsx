@@ -10,20 +10,22 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const handleLoadHotel = async () => {
+  const handleLoadCharacter = async () => {
     const apiCharacter = await api.getCharacter(id);
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
   React.useEffect(() => {
     if (id) {
-      handleLoadHotel();
+      handleLoadCharacter();
     }
   }, []);
+  
 
   const handleSave = async (character: Character) => {
     const apiCharacter = mapCharacterFromVmToApi(character);
     const success = await api.saveCharacter(apiCharacter);
+    console.log("Entro");
     if (success) {
       navigate(-1);
     } else {

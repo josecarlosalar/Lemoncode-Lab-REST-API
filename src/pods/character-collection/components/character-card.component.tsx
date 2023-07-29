@@ -9,7 +9,6 @@ import Avatar from '@mui/material/Avatar/Avatar';
 import IconButton from '@mui/material/IconButton/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import VisibilityIcon from '@mui/icons-material/Visibility';
 import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 
@@ -41,7 +40,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
       </CardContent>
       <CardActions>
         <IconButton onClick={() => onEdit(character.id)}>
-          <VisibilityIcon />
+          <EditIcon />
         </IconButton>
       </CardActions>
     </Card>
