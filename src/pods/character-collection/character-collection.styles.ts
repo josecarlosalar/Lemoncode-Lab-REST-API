@@ -24,3 +24,13 @@ export const list = css`
     grid-template-columns: repeat(3, 1fr);
   }
 `;
+
+export const containerSearch = css`
+  margin-top: 30;
+  margin-bottom: 30;
+  width: 300;
+  padding: 200;
+
+`;
+
+
