@@ -29,7 +29,7 @@ export const containerSearch = css`
   margin-top: 30;
   margin-bottom: 30;
   width: 300;
-  padding: 200;
+  padding: 100;
 
 `;
 
