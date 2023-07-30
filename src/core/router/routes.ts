@@ -11,7 +11,7 @@ export const switchRoutes: SwitchRoutes = {
   root: '/',
   characterCollection: '/rickmorty',
   character: '/rickmorty/:id',
-  editCharacter: '/rickmorty/:id',
+  editCharacter: '/rickmorty/:name',
 };
 
 type NavigationFunction = (id: string) => string;
@@ -22,5 +22,5 @@ interface LinkRoutes extends Omit<SwitchRoutes, 'editCharacter'> {
 
 export const linkRoutes: LinkRoutes = {
   ...switchRoutes,
-  editCharacter: (id) => generatePath(switchRoutes.editCharacter, { id }),
+  editCharacter: (name) => generatePath(switchRoutes.editCharacter, { name }),
 };

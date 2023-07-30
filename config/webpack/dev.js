@@ -5,42 +5,40 @@ const base = require('./base');
 const helpers = require('./helpers');
 
 module.exports = merge(base, {
-  mode: 'development',
-  devtool: 'inline-source-map',
-  output: {
-    path: helpers.resolveFromRootPath('dist'),
-    filename: '[name].js',
-  },
-  devServer: {
-    hot: true,
-    proxy: {
-      '/api': 'http://localhost:3000',
+    mode: 'development',
+    devtool: 'inline-source-map',
+    output: {
+        path: helpers.resolveFromRootPath('dist'),
+        filename: '[name].js',
     },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.[jt]sx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: require.resolve('babel-loader'),
-            options: {
-              plugins: [require.resolve('react-refresh/babel')],
+    devServer: {
+        hot: true,
+        proxy: {
+            '/api': 'http://localhost:3000',
+            '/graphql': 'http://localhost:3000',
+        },
+    },
+    module: {
+        rules: [{
+                test: /\.[jt]sx?$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: require.resolve('babel-loader'),
+                    options: {
+                        plugins: [require.resolve('react-refresh/babel')],
+                    },
+                }, ],
             },
-          },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
         ],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
+    },
+    plugins: [
+        new ReactRefreshWebpackPlugin(),
+        new Dotenv({
+            path: 'dev.env',
+        }),
     ],
-  },
-  plugins: [
-    new ReactRefreshWebpackPlugin(),
-    new Dotenv({
-      path: 'dev.env',
-    }),
-  ],
 });

@@ -13,8 +13,8 @@ export const CharacterCollectionContainer = () => {
     loadCharacterCollection();
   }, []);
 
-  const handleEdit = (id: string) => {
-    navigate(linkRoutes.editCharacter(id));
+  const handleEdit = (name: string) => {
+    navigate(linkRoutes.editCharacter(name));
   };
 
   return (

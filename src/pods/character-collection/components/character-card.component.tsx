@@ -15,7 +15,7 @@ import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;
-  onEdit: (id: string) => void;
+  onEdit: (name: string) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
@@ -40,7 +40,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         </div>
       </CardContent>
       <CardActions>
-        <IconButton onClick={() => onEdit(character.id)}>
+        <IconButton onClick={() => onEdit(character.name)}>
           <VisibilityIcon />
         </IconButton>
       </CardActions>

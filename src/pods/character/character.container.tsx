@@ -7,17 +7,17 @@ import { CharacterComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
-  const { id } = useParams<{ id: string }>();
+  const { name } = useParams<{ name: string }>();
   const navigate = useNavigate();
 
-  const handleLoadHotel = async () => {
-    const apiCharacter = await api.getCharacter(id);
+  const handleLoadCharacter = async () => {
+    const apiCharacter = await api.getCharacter(name);
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
   React.useEffect(() => {
-    if (id) {
-      handleLoadHotel();
+    if (name) {
+      handleLoadCharacter();
     }
   }, []);
 
